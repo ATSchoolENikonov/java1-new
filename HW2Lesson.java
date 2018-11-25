@@ -5,63 +5,57 @@
  * @version dated Nov 25, 2018
  */
 package com.company;
+
 import java.util.Arrays;
 
 
 public class HW2Lesson {
     public static void main(String[] args) {
-        invertArray();//метод для задания 1
-        fillArray();//метод для задания 2
-        changeArray();//метод для задания 3
-        maxminArray();//метод для задания 5
-
-    }
-
-    public static void invertArray() {
-        int[] arr = {0, 1, 1, 0, 1, 0, 1, 1};
+        int[] arr = {0, 1, 1, 0, 1, 0, 1, 1};//метод для задания 1
         System.out.println(Arrays.toString(arr));
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                arr[i]++;
-            } else arr[i]--;
-            System.out.printf(arr[i] + " ");
+                System.out.print( (arr[i] == 0 ? arr[i]+1 : arr[i]-1)+" ");
         }System.out.printf(" \n");
-    }
 
-    public static void fillArray() {
-        int[] arr2 = new int[8];
+        int[] arr2 = new int[8];//метод для задания 2
         System.out.println(Arrays.toString(arr2));
-        for (int j = 0; j < arr2.length; j++) {
-            if (j != 0) {
-                arr2[j] = arr2[j - 1] + 3;
+        for (int i = 0; i < arr2.length; i++) {
+            if (i != 0) {
+                arr2[i] = arr2[i - 1] + 3;
             }
-            System.out.print(arr2[j] + " ");
+            System.out.print(arr2[i] + " ");
 
-        }System.out.printf(" \n");
+        }
+        System.out.printf(" \n");
 
-    }public static void changeArray() {
-        int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};//метод для задания 3
         System.out.println(Arrays.toString(arr3));
-        for (int d = 0; d < arr3.length; d++) {
-            if (arr3[d]<6) {
-                arr3[d]=arr3[d]*2;
-            }System.out.print(arr3[d]+ " ");
-        }System.out.printf(" \n");
-
-    }public static void maxminArray() {
-        int [] arr4 = {9,3,7,10,12,8};
-        System.out.println(Arrays.toString(arr4));
-        int max=arr4[0];
-        int min=arr4[0];
-        for (int d = 0; d < arr4.length; d++) {
-
-            if (arr4[d]>max){
-                max=arr4[d];
-
-            }if (arr4[d]<min) {
-                min=arr4[d];
+        for (int i = 0; i < arr3.length; i++) {
+            if (arr3[i] < 6) {
+                arr3[i] *= 2;
             }
-        }System.out.println("max is "+max);
-        System.out.println("min is "+min);
+            System.out.print(arr3[i] + " ");
+        }
+        System.out.printf(" \n");
+        int[] arr4 = {9, 3, 7, 10, 12, 8};//метод для задания 4.1
+        System.out.println(Arrays.toString(arr4));
+        int max = arr4[0];
+
+        for (int i = 0; i < arr4.length; i++) {
+
+            if (arr4[i] > max) {
+                max = arr4[i];
+
+            }
+        }
+        System.out.println("max is " + max);
+
+        int min = arr4[0];//метод для задания 4.2
+        for (int i = 0; i < arr4.length; i++) {
+            if (arr4[i] < min) {
+                min = arr4[i];
+            }
+        }
+        System.out.println("min is " + min);
     }
 }
